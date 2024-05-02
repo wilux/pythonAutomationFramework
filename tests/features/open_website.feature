@@ -1,5 +1,5 @@
 # Created by floresnes at 02/05/2024
-Feature: Esto es un ejemplo
+Feature: Validaciones sobre Home de DEMO de global SQA
 
   Scenario: Ejemplo de escenario
     Given El usuario abre la pagina DEMO de global SQA

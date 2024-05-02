@@ -11,60 +11,50 @@ from webdriver_manager.opera import OperaDriverManager
 TIME_OUT = 5
 
 
-def select_browser(browser_name, headless):
-
+def select_browser(browser_name, option):
+    if option is None:
+        option = "--"
     if not browser_name:
         browser_name = 'firefox'
-    if not headless:
-        headless = False
     if browser_name == 'firefox':
-        driver = create_firefox_driver(headless)
+        driver = create_firefox_driver(option)
     elif browser_name == "chrome":
-        driver = create_chrome_driver(headless)
+        driver = create_chrome_driver(option)
     elif browser_name == "edge":
-        driver = create_edge_driver(headless)
+        driver = create_edge_driver(option)
     elif browser_name == "opera":
-        driver = create_opera_driver(headless)
+        driver = create_opera_driver(option)
     else:
         raise NotImplementedError('Browser not supported')
-    return driver
-
-
-def create_firefox_driver(headless):
-    options = webdriver.FirefoxOptions()
-    if headless:
-        options.add_argument('--headless')
-    driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()), options=options)
     driver.implicitly_wait(TIME_OUT)
     return driver
 
 
-def create_opera_driver(headless=False):
+def create_firefox_driver(arguments):
+    options = webdriver.FirefoxOptions()
+    options.add_argument(arguments)
+    driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()), options=options)
+    return driver
+
+
+def create_opera_driver(arguments):
     options = webdriver.ChromeOptions()
-    if headless:
-        options.add_argument("--headless")
+    options.add_argument(arguments)
     options.add_experimental_option('w3c', True)
     options.add_argument("--disable-extensions")
     driver = webdriver.Chrome(service=ChromiumService(OperaDriverManager().install()), options=options)
-    driver.implicitly_wait(TIME_OUT)
     return driver
 
 
-def create_chrome_driver(headless=False):
+def create_chrome_driver(arguments):
     options = webdriver.ChromeOptions()
-    if headless:
-        options.add_argument("--headless")
-
+    options.add_argument(arguments)
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
-    driver.implicitly_wait(TIME_OUT)
     return driver
 
 
-def create_edge_driver(headless=False):
+def create_edge_driver(arguments):
     options = webdriver.EdgeOptions()
-    if headless:
-        options.add_argument("--headless")
-
+    options.add_argument(arguments)
     driver = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()), options=options)
-    driver.implicitly_wait(TIME_OUT)
     return driver

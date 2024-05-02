@@ -3,9 +3,10 @@ from utils.browser_selector import select_browser
 
 def before_all(context):
     browser = context.config.userdata.get('browser')
-    headless = context.config.userdata.get('headless')
-    context.driver = select_browser(browser, headless)
+    option = context.config.userdata.get('option')
+    context.driver = select_browser(browser, option)
 
 
 def after_all(context):
-    context.driver.quit()
+    if hasattr(context, 'driver'):
+        context.driver.quit()
