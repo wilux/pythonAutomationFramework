@@ -4,7 +4,6 @@ from utils.browser_selector import select_browser
 def before_all(context):
     browser = context.config.userdata.get('browser')
     headless = context.config.userdata.get('headless')
-    context.env = "https://www.globalsqa.com/demo-site/"
     context.driver = select_browser(browser, headless)
 
 
