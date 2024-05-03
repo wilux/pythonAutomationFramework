@@ -17,23 +17,29 @@ pip install -r requirements.txt
 To execute the example test, use the following command:
 
 ```Bash
-behave -D browser=firefox -D option=--headless tests/features/open_website.feature
+behave -D browser=firefox -D options=--headless tests/features/open_website.feature
 ``` 
 
 ### Explanation:
-
+#### Specifies the browser to use:
 ```Bash
 -D browser=firefox 
 ``` 
-Specifies the browser to use. Supported browsers include firefox, chrome, opera, and edge. Default is firefox.
+ Supported browsers include firefox, chrome, opera, and edge. Default is firefox.
+
+#### Specify options capabilities:
 ```Bash
--D option=--headless 
+-D option=--headless
 ``` 
-Runs the browser in headless mode (no visible window). Omit this option for a visible browser window.
+```Bash
+-D option=--option1, --option2, optionN...
+``` 
+
+#### Path to the features:
 ```Bash
 tests/features/open_website.feature
  ``` 
-Path to the feature file containing the test scenario.
+Path to the feature/s file/s containing the test scenario.
 
 ## Reporting
 ### Allure Reports:
@@ -41,7 +47,7 @@ Path to the feature file containing the test scenario.
 The framework generates Allure reports in the allure.output directory. To view these reports, run the following command:
 
 ```Bash
-allure serve allure.output
+allure serve allure-results
  ``` 
 This will open a web browser with the generated Allure report.
 
