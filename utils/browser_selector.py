@@ -25,7 +25,7 @@ def select_browser(browser_name, option):
     elif browser_name == "opera":
         driver = create_opera_driver(option)
     else:
-        raise NotImplementedError('Browser not supported')
+        raise NotImplementedError('Browser is not supported')
     driver.implicitly_wait(TIME_OUT)
     return driver
 
