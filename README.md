@@ -18,11 +18,10 @@ behave -D browser=firefox -D option=--headless tests/features/open_website.featu
 
 ### Explanation:
 
-#### behave: Invokes the Behave test runner. 
 ```Bash
 -D browser=firefox 
 ``` 
-Specifies the browser to use. Supported options include firefox, chrome, opera, and edge. Default is firefox.
+Specifies the browser to use. Supported browsers include firefox, chrome, opera, and edge. Default is firefox.
 ```Bash
 -D option=--headless 
 ``` 
