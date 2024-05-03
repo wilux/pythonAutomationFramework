@@ -10,10 +10,10 @@ def before_all(context):
 
 
 def after_all(context):
-    if hasattr(context, 'driver'):
+    if hasattr(context, 'driver') and context.driver:
         context.driver.quit()
 
 
 def after_step(context, step):
-    if context.driver:
+    if hasattr(context, 'driver') and context.driver:
         allure.attach(context.driver.get_screenshot_as_png(), name='Screenshot', attachment_type=AttachmentType.PNG)
