@@ -29,10 +29,10 @@ behave -D browser=firefox -D options=--headless tests/features/open_website.feat
 
 #### Specify options capabilities:
 ```Bash
--D option=--headless
+-D options=--headless
 ``` 
 ```Bash
--D option=--option1, --option2, optionN...
+-D options=--option1, --option2, optionN...
 ``` 
 
 #### Path to the features:
