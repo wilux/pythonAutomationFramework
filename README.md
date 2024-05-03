@@ -1,5 +1,9 @@
-# Prerequisites:
-## This automation framework requires the following tools:
+# Python BDD Automation Framework
+* Note:
+This is a basic automation framework that can be expanded upon as needed. It provides a solid foundation for building comprehensive test suites using Behave and Allure.
+
+## Prerequisites:
+### This automation framework requires the following tools:
 
 * Python 3.9 or above: Download and install Python from https://www.python.org/downloads/.
 * Behave: A behavior-driven development (BDD) framework for Python. Install using pip install behave.
