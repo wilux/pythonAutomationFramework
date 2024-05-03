@@ -1,5 +1,5 @@
-Feature: Validaciones sobre Home de DEMO de global SQA
+Feature: Testing DEMO global SQA site
 
-  Scenario: El usuario ingresa a global SQA demo site
-    Given El usuario abre la pagina DEMO de global SQA
-    Then El usuario ve el titulo Automate Selenium/Protractor Automation  Scripts
+  Scenario: The user opens successfully DEMO global SQA site
+    Given The user opens DEMO global SQA site
+    Then Then user sees "Automate Selenium/Protractor Automation  Scripts" title
