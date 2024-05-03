@@ -11,7 +11,7 @@ def step_impl(context):
 
 @step("El usuario ve el titulo Automate Selenium/Protractor Automation  Scripts")
 def step_impl(context):
-    title = (By.CSS_SELECTOR, ".post-2715 > div:nth-of-type(1) h2")
-    title_element = WebDriverWait(context.driver, 10).until(EC.visibility_of_element_located(title))
+    title_locator = (By.CSS_SELECTOR, ".post-2715 > div:nth-of-type(1) h2")
+    title_element = WebDriverWait(context.driver, 10).until(EC.visibility_of_element_located(title_locator))
     assert title_element.text == "Automate Selenium/Protractor Automation  Scripts"
 
