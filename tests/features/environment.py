@@ -16,4 +16,5 @@ def after_all(context):
 
 def after_step(context, step):
     if hasattr(context, 'driver') and context.driver:
+        # if step.status == 'failed':
         allure.attach(context.driver.get_screenshot_as_png(), name='Screenshot', attachment_type=AttachmentType.PNG)
