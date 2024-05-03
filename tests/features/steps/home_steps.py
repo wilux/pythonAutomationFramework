@@ -4,9 +4,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-@step('The user opens DEMO global SQA site')
-def step_impl(context):
-    context.driver.get("https://www.globalsqa.com/demo-site/")
+@step('The user opens {url}')
+def step_impl(context, url):
+    context.driver.get(url)
 
 
 @step('Then user sees "{text}" title')
