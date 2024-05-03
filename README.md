@@ -45,10 +45,10 @@ This will open a web browser with the generated Allure report.
 
 The framework also generates JUnit reports in the reports directory. These reports are compatible with Jenkins and other CI/CD tools.
 
-Note:
+* Note:
 This is a basic automation framework that can be expanded upon as needed. It provides a solid foundation for building comprehensive test suites using Behave and Allure.
 
-Additional Resources:
-Behave documentation: https://behave.readthedocs.io/
-Allure documentation: https://github.com/allure-framework
-Python documentation: https://www.python.org/
+#### Additional Resources:
+* Behave documentation: https://behave.readthedocs.io/
+* Allure documentation: https://github.com/allure-framework
+* Python documentation: https://www.python.org/
