@@ -9,7 +9,7 @@ def step_impl(context, actor, url):
     context.driver.get(url)
 
 
-@step('Then {actor} sees "{text}" title')
+@step('The {actor} sees "{text}" title')
 def step_impl(context, actor, text):
     title_locator = (By.CSS_SELECTOR, ".post-2715 > div:nth-of-type(1) h2")
     title_element = WebDriverWait(context.driver, 10).until(EC.visibility_of_element_located(title_locator))
