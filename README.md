@@ -17,7 +17,7 @@ pip install -r requirements.txt
 To execute the example test, use the following command:
 
 ```Bash
-behave -D browser=firefox -D options=--headless tests/features/open_website.feature
+behave -D browser=firefox -D options=--headless selenium_tests/features/open_demo.feature
 ``` 
 
 ### Explanation:
@@ -37,7 +37,7 @@ behave -D browser=firefox -D options=--headless tests/features/open_website.feat
 
 #### Path to the features:
 ```Bash
-tests/features/open_website.feature
+selenium_tests/features/open_demo.feature
  ``` 
 Path to the feature/s file/s containing the test scenario.
 
